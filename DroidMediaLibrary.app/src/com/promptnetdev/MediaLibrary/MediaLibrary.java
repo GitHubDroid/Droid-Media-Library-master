@@ -12,9 +12,9 @@ import android.widget.ListView;
 
 public class MediaLibrary extends Activity {
 
-	public static final String AUTHORITY = "grevian.MediaLibrary";
+	public static final String AUTHORITY = "com.promptnetdev.MediaLibrary";
 
-	private final static String TAG = "GrevianMedia";
+	private final static String TAG = "DroidMedia";
 
 	private TextSearchAdapter mSearchAdapter;
 	
@@ -52,7 +52,7 @@ public class MediaLibrary extends Activity {
 			new ListView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> ListContents, View mView, int position, long arg3) {
 				Media itemDetails = (Media)ListContents.getItemAtPosition(position);
-				Intent i = new Intent(MediaLibrary.this, grevian.MediaLibrary.ItemFoundActivity.class);
+				Intent i = new Intent(MediaLibrary.this, com.promptnetdev.MediaLibrary.ItemFoundActivity.class);
 		        i.putExtra("UPC", itemDetails.getUPC() );
 		        startActivity(i);
 			}
@@ -66,7 +66,7 @@ public class MediaLibrary extends Activity {
 	        if (resultCode == RESULT_OK) {
 	            String contents = intent.getStringExtra("SCAN_RESULT");
 	            
-	            Intent i = new Intent(MediaLibrary.this, grevian.MediaLibrary.ItemFoundActivity.class);
+	            Intent i = new Intent(MediaLibrary.this, com.promptnetdev.MediaLibrary.ItemFoundActivity.class);
 	            i.putExtra("UPC", contents);
 	            startActivity(i);
 	            
